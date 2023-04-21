@@ -1,8 +1,13 @@
-#ifndef <MAIN_H>
-#define <MAIN_H>
+#ifndef MAIN_H
+#define MAIN_H
 
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <stdarg.h>
 
-#endif
+int _printf(const char *format, ...);
+
+int print_char(char c);
+int print_str(char *str);
+
+#endif /* MAIN_H */
