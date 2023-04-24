@@ -82,7 +82,8 @@ int _print(const char *format, int *i, va_list args, char buffer[])
 	int ind;
 	int chars_written = -1;
 	fmt_t formatters[] = {{'c', print_char}, {'s', print_str},
-		{'%', print_percent}, {'\0', NULL}};
+		{'%', print_percent}, {'d', print_int}, {'i', print_int},
+		{'\0', NULL}};
 
 	for (ind = 0; formatters[ind].spec; ind++)
 		if (formatters[ind].spec == format[*i])

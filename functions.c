@@ -48,7 +48,7 @@ int print_str(va_list args, char buffer[])
  */
 int print_percent(va_list args, char buffer[])
 {
-	UNUSED(args); 
+	UNUSED(args);
 	UNUSED(buffer);
 
 	return (write(1, "%%", 1));
@@ -61,9 +61,9 @@ int print_percent(va_list args, char buffer[])
  *
  * Return: The number of characters written.
  */
-int print_int(va_list args, char buffer[])
+int print_int(va_list arg, char buffer[])
 {
-	int n = va_args(args, int);
+	int n = va_arg(arg, int);
 	unsigned int num;
 	int is_negative = 0;
 	int i = BUFFER_SIZE - 2;
@@ -91,6 +91,6 @@ int print_int(va_list args, char buffer[])
 	if (is_negative)
 		buffer[i] = '-';
 	else
-		i++
+		i++;
 			return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
 }
