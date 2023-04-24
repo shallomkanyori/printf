@@ -6,4 +6,3 @@
 - Write output to stdout.
 - `format` is a string composed of zero or more directives.
 - Handle the following conversion specifiers: `c`, `s`, `%`.
-- Additions follow
