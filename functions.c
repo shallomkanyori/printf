@@ -48,7 +48,7 @@ int print_str(va_list args, char buffer[])
  */
 int print_percent(va_list args, char buffer[])
 {
-	UNUSED(args); /* declared argument */
+	UNUSED(args); 
 	UNUSED(buffer);
 
 	return (write(1, "%%", 1));
