@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 void print_buffer(char buffer[], int *buffer_ind);
 int _print(const char *format, int *i, va_list args, char buffer[]);

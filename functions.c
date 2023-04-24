@@ -69,7 +69,7 @@ int print_int(va_list args, char buffer[])
 	int i = BUFFER_SIZE - 2;
 
 	buffer[BUFFER_SIZE - 1] = '\0';
-	
+
 	if (n < 0)
 	{
 		is_negative = 1;
@@ -81,7 +81,7 @@ int print_int(va_list args, char buffer[])
 	}
 	if (n == 0)
 		buffer[i--] = '0';
-	
+
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
@@ -92,5 +92,5 @@ int print_int(va_list args, char buffer[])
 		buffer[i] = '-';
 	else
 		i++
-	return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
+			return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
 }
