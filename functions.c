@@ -92,5 +92,36 @@ int print_int(va_list arg, char buffer[])
 		buffer[i] = '-';
 	else
 		i++;
-			return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
+	return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
 }
+/**
+ * * print_binary - writes an unsigned integer to stdout in binary
+ * * @args: the argument list
+ * * @buffer: the buffer that holds what to print
+ * *
+ * * Return: the number of characters printed
+ * */
+int print_binary(va_list args, char buffer[])
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int i = BUFFER_SIZE - 2; /* start from the end */
+
+	buffer[BUFFER_SIZE - 1] = ‘\0’; /* set last char to null byte */
+
+	/* if num is 0, write 0 to buffer */
+	if (num == 0)
+		buffer[i--] = ‘0’;
+
+	/* write num to buffer in binary, starting from the last digit */
+	while(num > 0)
+	{
+		buffer[i--] = (num % 2) + ‘0’;
+		num /= 2;
+	}
+
+	i++;
+
+	/* write buffer to stdout starting from index i */
+	return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
+}
+
