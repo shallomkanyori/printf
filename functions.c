@@ -56,14 +56,14 @@ int print_percent(va_list args, char buffer[])
 
 /**
  * print_int - writes an integer to stdout
- * @args: The argument list
- * @buffer: The buffer that holds what to print
+ * @args: the argument list
+ * @buffer: the buffer that holds what to print
  *
- * Return: The number of characters written.
+ * Return: the number of characters written.
  */
-int print_int(va_list arg, char buffer[])
+int print_int(va_list args, char buffer[])
 {
-	int n = va_arg(arg, int);
+	int n = va_arg(args, int);
 	unsigned int num;
 	int is_negative = 0;
 	int i = BUFFER_SIZE - 2;
@@ -79,6 +79,7 @@ int print_int(va_list arg, char buffer[])
 	{
 		num = (unsigned int)n;
 	}
+
 	if (n == 0)
 		buffer[i--] = '0';
 
@@ -92,8 +93,10 @@ int print_int(va_list arg, char buffer[])
 		buffer[i] = '-';
 	else
 		i++;
+
 	return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
 }
+
 /**
  * print_binary - writes an unsigned integer to stdout in binary
  * @args: the argument list
@@ -116,6 +119,7 @@ int print_binary(va_list args, char buffer[])
 		buffer[i--] = (num % 2) + '0';
 		num /= 2;
 	}
+
 	i++;
 	return (write(1, &buffer[i], BUFFER_SIZE - i - 1));
 }

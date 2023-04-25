@@ -27,7 +27,12 @@ int _printf(const char *format, ...);
 int print_char(va_list args, char buffer[]);
 int print_str(va_list args, char buffer[]);
 int print_percent(va_list args, char buffer[]);
-int print_int (va_list args, char buffer[]);
-int print_binary (va_list args, char buffer[]);
+int print_int(va_list args, char buffer[]);
+int print_binary(va_list args, char buffer[]);
+int print_unsigned(va_list args, char buffer[]);
+int print_octal(va_list args, char buffer[]);
+int print_hex_lower(va_list args, char buffer[]);
+int print_hex_upper(va_list args, char buffer[]);
+int print_hex(unsigned int num, char buffer[], char char_set[]);
 
 #endif /* MAIN_H */

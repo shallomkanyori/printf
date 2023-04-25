@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 void print_buffer(char buffer[], int *buffer_ind);
 int _print(const char *format, int *i, va_list args, char buffer[]);
@@ -83,7 +82,8 @@ int _print(const char *format, int *i, va_list args, char buffer[])
 	int chars_written = -1;
 	fmt_t formatters[] = {{'c', print_char}, {'s', print_str},
 		{'%', print_percent}, {'d', print_int}, {'i', print_int},
-		{'b', print_binary}, {'\0', NULL}};
+		{'b', print_binary}, {'u', print_unsigned}, {'o', print_octal},
+		{'x', print_hex_lower}, {'X', print_hex_upper}, {'\0', NULL}};
 
 	for (ind = 0; formatters[ind].spec; ind++)
 		if (formatters[ind].spec == format[*i])
